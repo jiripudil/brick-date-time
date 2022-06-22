@@ -344,6 +344,6 @@ final class Instant implements JsonSerializable
 
     public function __toString(): string
     {
-        return (string) ZonedDateTime::ofInstant($this, TimeZone::utc());
+        return (string) ZonedDateTime::ofInstant($this, TimeZoneOffset::utc());
     }
 }

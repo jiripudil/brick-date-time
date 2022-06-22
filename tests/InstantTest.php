@@ -8,7 +8,7 @@ use Brick\DateTime\Clock\FixedClock;
 use Brick\DateTime\DateTimeException;
 use Brick\DateTime\Duration;
 use Brick\DateTime\Instant;
-use Brick\DateTime\TimeZone;
+use Brick\DateTime\TimeZoneOffset;
 
 use function json_encode;
 
@@ -643,7 +643,7 @@ class InstantTest extends AbstractTestCase
 
     public function testAtTimeZone(): void
     {
-        $timeZone = TimeZone::utc();
+        $timeZone = TimeZoneOffset::utc();
         $instant = Instant::of(1000000000);
         $result = $instant->atTimeZone($timeZone);
         $this->assertSame(1000000000, $result->getInstant()->getEpochSecond());

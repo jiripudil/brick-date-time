@@ -710,7 +710,7 @@ final class LocalDateTime implements JsonSerializable
      */
     public function toNativeDateTime(): DateTime
     {
-        return $this->atTimeZone(TimeZone::utc())->toNativeDateTime();
+        return $this->atTimeZone(TimeZoneOffset::utc())->toNativeDateTime();
     }
 
     /**

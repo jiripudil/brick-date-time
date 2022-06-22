@@ -60,15 +60,10 @@ class TimeZoneTest extends AbstractTestCase
         ];
     }
 
-    public function testUtc(): void
-    {
-        $this->assertTimeZoneOffsetIs(0, TimeZone::utc());
-    }
-
     public function testIsEqualTo(): void
     {
-        $this->assertTrue(TimeZone::utc()->isEqualTo(TimeZoneOffset::ofTotalSeconds(0)));
-        $this->assertFalse(TimeZone::utc()->isEqualTo(TimeZoneOffset::ofTotalSeconds(3600)));
+        $this->assertTrue(TimeZoneOffset::utc()->isEqualTo(TimeZoneOffset::ofTotalSeconds(0)));
+        $this->assertFalse(TimeZoneOffset::utc()->isEqualTo(TimeZoneOffset::ofTotalSeconds(3600)));
     }
 
     /**
